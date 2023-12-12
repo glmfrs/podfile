@@ -1,5 +1,6 @@
 FROM docker.io/library/debian:bookworm
-LABEL url="https://github.com/glmfrs/podfile/blob/main/debian12.dockerfile"
+# LABEL url="https://github.com/glmfrs/podfile/blob/main/debian12.dockerfile"
+LABEL org.opencontainers.image.description glmfrs_debian_12
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -qq \
 && apt-get dist-upgrade -y -qq \
 && apt-get install -y -qq --no-install-recommends apt-utils bash-completion bind9-dnsutils curl inetutils-ping locales openssh-client vim-nox \

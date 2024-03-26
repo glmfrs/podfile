@@ -1,5 +1,4 @@
 FROM docker.io/library/debian:bookworm
-# LABEL url="https://github.com/glmfrs/podfile/blob/main/debian12.dockerfile"
 LABEL org.opencontainers.image.description glmfrs_debian_12
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -qq \
 && apt-get dist-upgrade -y -qq \
@@ -10,3 +9,4 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -qq \
 && localedef -i en_GB -c -f UTF-8 -A /usr/share/locale/locale.alias en_GB.UTF-8
 ENV LANG en_GB.utf8
 COPY conf_vimrc /etc/vim/vimrc
+COPY conf_bashrc /etc/bash.bashrc
